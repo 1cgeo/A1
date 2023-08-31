@@ -176,7 +176,7 @@ function startARMode(position) {
   app.camera.updateProjectionMatrix();
 
   if (typeof position === "undefined") {
-    app.camera.position.set(0, 0, 0);
+    app.camera.position.set(0, 0, -30);
     Q3D.E("current-location").classList.add("touchme");
   }
   else {
