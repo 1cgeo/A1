@@ -52,6 +52,8 @@ app.eventListener.resize = function () {
   app.render();
 };
 
+// console.log(app.queryTargetPosition.z + Q3D.Config.AR.DH * app.scene.userData.zScale)
+// console.log(app.queryTargetPosition.z + Q3D.Config.AR.DH * app.scene.userData.zScale)
 app.cameraAction._move = app.cameraAction.move;
 app.cameraAction.move = function () {
   app.cameraAction._move(app.queryTargetPosition.x,
@@ -174,7 +176,7 @@ function startARMode(position) {
   app.camera.updateProjectionMatrix();
 
   if (typeof position === "undefined") {
-    app.camera.position.set(0, 0, 30);
+    app.camera.position.set(0, 0, 0);
     Q3D.E("current-location").classList.add("touchme");
   }
   else {
