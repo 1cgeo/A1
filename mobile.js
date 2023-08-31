@@ -217,7 +217,7 @@ function startARMode(position) {
 function startARModeHere() {
   var vec3 = new THREE.Vector3();
   vec3.copy(app.queryTargetPosition);
-  vec3.z = 0//+= Q3D.Config.AR.DH //* app.scene.userData.zScale;
+  vec3.z = -20//+= Q3D.Config.AR.DH //* app.scene.userData.zScale;
   startARMode(vec3);
   Q3D.E("ar-checkbox").checked = true;
 }
