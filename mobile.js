@@ -219,7 +219,6 @@ function startARModeHere() {
   var vec3 = new THREE.Vector3();
   vec3.copy(app.queryTargetPosition);
   vec3.z += Q3D.Config.AR.DH * app.scene.userData.zScale;
-  alert(`x: ${vec3.x}, y: ${vec3.y}, z: ${vec3.z}`)
   startARMode(vec3);
   Q3D.E("ar-checkbox").checked = true;
 }
@@ -227,6 +226,7 @@ function startARModeHere() {
 function moveHere() {
   app.camera.position.copy(app.queryTargetPosition);
   app.camera.position.z += Q3D.Config.AR.DH * app.scene.userData.zScale;
+  alert(`x: ${app.camera.position.x}, y: ${app.camera.position.y}, z: ${app.camera.position.z}`)
 }
 
 function stopARMode() {
