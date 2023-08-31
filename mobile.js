@@ -9,7 +9,7 @@ Q3D.Config.AR = {
   MND: 0        // magnetic North direction (clockwise from upper direction of map, in degrees)
 };
 
-var app = app.camera.position.set(0, 0, 30);
+var app = Q3D.application,
     ARMode = false;
 var orbitControls, devControls, oldFOV;
 
@@ -52,8 +52,6 @@ app.eventListener.resize = function () {
   app.render();
 };
 
-// console.log(app.queryTargetPosition.z + Q3D.Config.AR.DH * app.scene.userData.zScale)
-// console.log(app.queryTargetPosition.z + Q3D.Config.AR.DH * app.scene.userData.zScale)
 app.cameraAction._move = app.cameraAction.move;
 app.cameraAction.move = function () {
   app.cameraAction._move(app.queryTargetPosition.x,
@@ -171,18 +169,16 @@ function init() {
 }
 
 function startARMode(position) {
-  ARMode = true;
+  let ARMode = true;
   app.camera.fov = Q3D.Config.AR.FOV;
   app.camera.updateProjectionMatrix();
-  console.log(position)
-  app.camera.position.set(0, -10, -30)
+
   if (typeof position === "undefined") {
-    //app.camera.position.set(0, 0, 30);
+    app.camera.position.set(0, 0, 30);
     Q3D.E("current-location").classList.add("touchme");
   }
   else {
-    //app.camera.position.copy(position);
-    //app.camera.position.set(0, 0, 30);
+    app.camera.position.copy(position);
   }
 
   if (Q3D.Config.bgColor !== null) {
@@ -221,7 +217,7 @@ function startARMode(position) {
 function startARModeHere() {
   var vec3 = new THREE.Vector3();
   vec3.copy(app.queryTargetPosition);
-  vec3.z += Q3D.Config.AR.DH * app.scene.userData.zScale;
+  vec3.z += Q3D.Config.AR.DH //* app.scene.userData.zScale;
   startARMode(vec3);
   Q3D.E("ar-checkbox").checked = true;
 }
