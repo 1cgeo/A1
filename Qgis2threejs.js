@@ -29,7 +29,7 @@ Q3D.Config = {
   orthoCamera: false,
   viewpoint: {      // z-up
     default: {      // assumed that origin is (0, 0, 0) and base extent width in 3D world coordinates is 1
-      pos: new THREE.Vector3(0, -1, -3),
+      pos: new THREE.Vector3(0, -1, -20),
       lookAt: new THREE.Vector3()
     }
   },
