@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: MIT
 
 "use strict";
-var POS_PRINT
 
 Q3D.Config.AR = {
   DH: 1.5,      // device height from ground (in CRS vertical unit)
@@ -175,7 +174,7 @@ function startARMode(position) {
   app.camera.updateProjectionMatrix();
 
   if (typeof position === "undefined") {
-    app.camera.position.set(0, 0, 30);
+    app.camera.position.set(415.016, -2995.300, 560.919);
     Q3D.E("current-location").classList.add("touchme");
   }
   else {
@@ -226,7 +225,6 @@ function startARModeHere() {
 function moveHere() {
   app.camera.position.copy(app.queryTargetPosition);
   app.camera.position.z += Q3D.Config.AR.DH * app.scene.userData.zScale;
-  alert(`x: ${app.camera.position.x}, y: ${app.camera.position.y}, z: ${app.camera.position.z}`)
 }
 
 function stopARMode() {
