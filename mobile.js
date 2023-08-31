@@ -225,6 +225,7 @@ function startARModeHere() {
 function moveHere() {
   app.camera.position.copy(app.queryTargetPosition);
   app.camera.position.z += Q3D.Config.AR.DH * app.scene.userData.zScale;
+  alert(`x: ${app.camera.position.x}, y: ${app.camera.position.y}, z: ${app.camera.position.z}`)
 }
 
 function stopARMode() {
