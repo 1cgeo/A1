@@ -174,9 +174,9 @@ function startARMode(position) {
   ARMode = true;
   app.camera.fov = Q3D.Config.AR.FOV;
   app.camera.updateProjectionMatrix();
-
+  console.log(position)
   if (typeof position === "undefined") {
-    app.camera.position.set(0, 0, -30);
+    app.camera.position.set(0, 0, 30);
     Q3D.E("current-location").classList.add("touchme");
   }
   else {
