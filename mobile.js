@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: MIT
 
 "use strict";
+var POS_PRINT
 
 Q3D.Config.AR = {
   DH: 1.5,      // device height from ground (in CRS vertical unit)
@@ -217,7 +218,8 @@ function startARMode(position) {
 function startARModeHere() {
   var vec3 = new THREE.Vector3();
   vec3.copy(app.queryTargetPosition);
-  vec3.z = -20//+= Q3D.Config.AR.DH //* app.scene.userData.zScale;
+  vec3.z += Q3D.Config.AR.DH * app.scene.userData.zScale;
+  alert(`x: ${vec3.x}, y: ${vec3.y}, z: ${vec3.z}`)
   startARMode(vec3);
   Q3D.E("ar-checkbox").checked = true;
 }
