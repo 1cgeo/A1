@@ -9,7 +9,7 @@ Q3D.Config.AR = {
   MND: 0        // magnetic North direction (clockwise from upper direction of map, in degrees)
 };
 
-var app = Q3D.application,
+var app = app.camera.position.set(0, 0, 30);,
     ARMode = false;
 var orbitControls, devControls, oldFOV;
 
@@ -180,7 +180,8 @@ function startARMode(position) {
     Q3D.E("current-location").classList.add("touchme");
   }
   else {
-    app.camera.position.copy(position);
+    //app.camera.position.copy(position);
+    app.camera.position.set(0, 0, 30);
   }
 
   if (Q3D.Config.bgColor !== null) {
