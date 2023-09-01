@@ -345,7 +345,7 @@ body {
   position: fixed;
   overflow: show;
   top: 60vh;
-  left: 48vw;
+  left: 50%;
   bottom: 0;
   right: 0;
 }
@@ -361,8 +361,22 @@ body {
   background-color: white;
   background-image: url('./images/om.png');
   background-repeat: no-repeat;
-  background-size: 16vw 40vh;
-  background-position: 42vw 20vh;
+  background-size: 15% 40vh;
+  background-position: 52% 20vh;
+}
+
+@media (max-width: 1092px) {
+  .lds-facebook:before {
+    background-size: 20% 40vh;
+    background-position: 52% 20vh;
+  }
+}
+
+@media (max-width: 460px) {
+  .lds-facebook:before {
+    background-size: 30% 40vh;
+    background-position: 52% 20vh;
+  }
 }
 
 .lds-facebook div {
