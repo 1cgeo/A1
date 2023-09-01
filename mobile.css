@@ -361,8 +361,8 @@ body {
   background-color: white;
   background-image: url('./images/om.png');
   background-repeat: no-repeat;
-  background-size: 20vw 40vh;
-  background-position: 40vw 20vh;
+  background-size: 16vw 40vh;
+  background-position: 42vw 20vh;
 }
 
 .lds-facebook div {
