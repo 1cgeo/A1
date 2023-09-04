@@ -169,12 +169,13 @@ function init() {
 }
 
 function startARMode(position) {
+  //alert(`x: ${position.x}, y: ${position.y}, z: ${position.z}`)
   ARMode = true;
   app.camera.fov = Q3D.Config.AR.FOV;
   app.camera.updateProjectionMatrix();
 
   if (typeof position === "undefined") {
-    app.camera.position.set(217.463, 600.524, 1060.919);
+    app.camera.position.set(10.953, 40.901, 1217.5);
     Q3D.E("current-location").classList.add("touchme");
   }
   else {
